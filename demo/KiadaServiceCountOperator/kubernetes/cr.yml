@@ -1,0 +1,7 @@
+apiVersion: "hanyang.ac.kr/v1"
+kind: KiadaServiceCount
+metadata:
+  name: hanyang-kiada-autoscalar
+spec:
+  owner: hanyang-university-graduation-37-team
+  kiadaServiceCount: 1

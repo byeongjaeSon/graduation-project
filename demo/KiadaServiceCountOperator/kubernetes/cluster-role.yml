@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cr-hanyang-kiada-autoscalar
+rules:
+  - apiGroups: ["hanyang.ac.kr"]
+    resources: ["*"]
+    verbs: [ "*" ]
+  - apiGroups: [ "apps" ]
+    resources: [ "deployments" ]
+    verbs: [ "*" ]

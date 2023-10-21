@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-backend
+  labels:
+    app: account-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-backend
+  template:
+    metadata:
+      name: account-backend
+      labels:
+        app: account-backend
+    spec:
+      containers:
+        - name: account-backend
+          image: byeongjaeson/account-backend:latest
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: account-backend-secret
+      restartPolicy: Always
+      

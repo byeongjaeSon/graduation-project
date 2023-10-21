@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kiada-service-count-operator
+  labels:
+    app: kiada-service-count-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kiada-service-count-operator
+  template:
+    metadata:
+      name: kiada-service-count-operator
+      labels:
+        app: kiada-service-count-operator
+    spec:
+      containers:
+        - name: kiada-service-count-operator
+          image: byeongjaeson/kiada-service-count-operator:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
